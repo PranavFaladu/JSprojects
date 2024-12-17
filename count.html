@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .counter {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .increment {
+      background-color: #28a745; /* Green */
+    }
+
+    .increment:hover {
+      background-color: #218838;
+    }
+
+    .decrement {
+      background-color: #dc3545; /* Red */
+    }
+
+    .decrement:hover {
+      background-color: #c82333;
+    }
+
+    .reset {
+      background-color: #007bff; /* Blue */
+    }
+
+    .reset:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="counter" id="counter">0</div>
+  <div class="button-container">
+    <button class="increment" onclick="increment()">Increment</button>
+    <button class="decrement" onclick="decrement()">Decrement</button>
+    <button class="reset" onclick="reset()">Reset</button>
+  </div>
+
+  <script>
+    let count = 0;
+
+    function updateCounter() {
+      document.getElementById('counter').textContent = count;
+    }
+
+    function increment() {
+      count++;
+      updateCounter();
+    }
+
+    function decrement() {
+      count--;
+      updateCounter();
+    }
+
+    function reset() {
+      count = 0;
+      updateCounter();
+    }
+  </script>
+</body>
+</html>
